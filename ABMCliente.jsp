@@ -41,13 +41,13 @@
                             <td>
                                 <form action=" /Carrito/ServletABMCliente">
                                     <input type="hidden" name="accion" value="editar">
-                                    <input type="hidden" name="id" value="<%=u.getId_usuario()%>">
+                                    <input type="hidden" name="id_usuario" value="<%=u.getId_usuario()%>">
                                     <input type="submit" value="Editar">
                                 </form>
                             </td>
                             <td>
                                 <form action="/Carrito/ServletABMCliente">
-                                    <input type="hidden" name="id" value="<%=u.getId_usuario()%>">
+                                    <input type="hidden" name="id_usuario" value="<%=u.getId_usuario()%>">
                                     <input type="hidden" name="accion" value="eliminar">
                                     <input type="submit" value="Eliminar">
                                 </form>

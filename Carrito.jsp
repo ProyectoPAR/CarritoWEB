@@ -37,6 +37,7 @@
                         <h2>El carrito esta vacio</h2>
                   <%}
                 %>
+                <label>Total de la Compra: <input type="text" name="monto_total" value="<%=carrito.getMonto_total()%>"></label>
             </form>
             <form action="ServletCompra" id="formulario_compra">
                 <label>Seleccion su forma de pago</label>

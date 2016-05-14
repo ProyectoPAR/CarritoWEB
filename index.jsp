@@ -19,20 +19,21 @@
             <fieldset>
                 <legend>Inicie sesion para continuar</legend>
             <form method="post" action="Login">
-            <table>
-                <tr>
-                    <!--para facilitar el login se ingresara solo con el nombre usuario-->
-                    <td><input type="text" name="nombre_usuario" placeholder="Nombre de usuario"></td>
-                </tr>    
-                
-                <tr>
-                    <td><input type="password" name="pass" placeholder="Contrasenha"></td>
-                </tr>    
+                <table>
+                    <tr>
+                        <!--para facilitar el login se ingresara solo con el nombre usuario-->
+                        <td><input type="text" name="nombre_usuario" placeholder="Nombre de usuario"></td>
+                    </tr>    
 
-                <tr>
-                    <td><input type="submit" value="Enviar"></td>
-                </tr>
-            </table>
+                    <tr>
+                        <td><input type="password" name="pass" placeholder="Contrasenha"></td>
+                    </tr>    
+
+                    <tr>
+                        <td><input type="submit" value="Enviar"></td>
+                    </tr>
+                </table>
+                <input type="hidden" name="accion" value="login">
             </form>
             </fieldset>
         </section>

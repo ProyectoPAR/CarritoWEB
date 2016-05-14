@@ -50,8 +50,8 @@
                 <li><a href="Login.jsp">Inicio sesion</a></li>
                 
                 <%}else{%>
-                <li><a href="#">Mi perfil</a></li> <!--falta implementar, lo hare luego-->
-                <li><a href="#">Mis compras</a></li>
+                <li><a href="Perfil.jsp">Mi perfil</a></li> <!--falta implementar, lo hare luego-->
+                <li><a href="MisCompras.jsp">Mis compras</a></li>
                 <li><a href="Login?accion=logout">Cerrar sesion</a></li>
                 
                 <%}%>

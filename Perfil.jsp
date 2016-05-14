@@ -1,13 +1,11 @@
 <%-- 
-    Document   : ActualizarDatosCliente
-    Created on : May 10, 2016, 1:25:46 PM
-    Author     : User
+    Document   : Perfil
+    Created on : 14/05/2016, 04:47:32 PM
+    Author     : root
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page 
-        import = "com.par.paronline.modelo.Usuario"
-        import = "com.par.paronline.modelo.ABMCliente"%>
+<%@page import= "com.par.paronline.modelo.Usuario" %>
 <%@include file = "MenuPrincipal.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -17,34 +15,22 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
         <section id="formulario">
-            <%Usuario u = ABMCliente.buscarUsuario(Integer.parseInt(request.getParameter("id_usuario")));//esta linea tira una excepcion
-            System.out.println(u.getId_usuario());%>
-            <form action="ServletABMCliente" method="post">
+            <%
+                Usuario user = (Usuario) session.getAttribute("user");
+            %>
+            <form action="" method="post">
                 <fieldset>
-                <legend>Editar datos del cliente: </legend>
-                <table>
-                    
-                    <tr>
-                        <td>
-                            Id de usuario:
-                        </td>
-                        
-                        <td>
-                            <input type="text" name="id_usuario" placeholder="Id de usuario"
-                                   value="<%=u.getId_usuario()%>">
-                        <td>
-                    </tr>
-                    
+                <legend>Mi Perfil: </legend>
+                <table> 
                     <tr>
                         <td>
                             Nombre:
                         </td>
                         
                         <td>
-                            <input type="text" name="nombre" placeholder="Nombre"
-                                   value="<%=u.getNombre()%>">
+                            <input type="text" name="nombre"
+                                   value="<%=user.getNombre()%>" readonly="yes">
                         <td>
                     </tr>
                     
@@ -54,8 +40,8 @@
                         </td>
                         
                         <td>
-                            <input type="text" name="apellido" placeholder="Apellido"
-                                   value="<%=u.getApellido()%>">
+                            <input type="text" name="apellido"
+                                   value="<%=user.getApellido()%>" readonly="yes">
                         </td>
                     </tr>
                     
@@ -65,8 +51,8 @@
                         </td>
                         
                         <td>
-                            <input type="text" name="direccion" placeholder="Direccion"
-                                   value="<%=u.getDireccion()%>">
+                            <input type="text" name="direccion"
+                                   value="<%=user.getDireccion()%>" readonly="yes">
                         <td> 
                     </tr>
                     
@@ -76,8 +62,8 @@
                         </td>
                         
                         <td>
-                            <input type="text" name="email" placeholder="Email"
-                                   value="<%=u.getEmail()%>">
+                            <input type="text" name="email"
+                                   value="<%=user.getEmail()%>" readonly="yes">
                         </td>
                     </tr>
                     
@@ -88,18 +74,7 @@
                         
                         <td>
                             <input type="password" name="contrasenha" placeholder="Contrasenha"
-                                   value="<%=u.getContrasenha()%>">
-                        </td> 
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            Rol:
-                        </td>
-                        
-                        <td>
-                            <input type="radio" name="rol" value="U">Usuario
-                            <input type="radio" name="rol" value="A">Administrador
+                                   value="<%=user.getContrasenha()%>" readonly="yes">
                         </td> 
                     </tr>
                     
@@ -120,8 +95,6 @@
                         
                 <input type="hidden" name="accion" value="grabarCambios">
                 </fieldset>
-            </form>
-            
         </section>
     </body>
 </html>
