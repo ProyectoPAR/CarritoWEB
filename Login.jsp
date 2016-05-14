@@ -21,7 +21,8 @@
             <form method="post" action="Login">
             <table>
                 <tr>
-                    <td><input type="text" name="user_email" placeholder="ID de usuario"></td>
+                    <!--para facilitar el login se ingresara solo con el nombre usuario-->
+                    <td><input type="text" name="nombre_usuario" placeholder="Nombre de Usuario"></td>
                 </tr>    
                 
                 <tr>

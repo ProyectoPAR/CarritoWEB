@@ -38,10 +38,10 @@
                   <%}
                 %>
             </form>
-            <form action="ServletCompra">
+            <form action="ServletCompra" id="formulario_compra">
                 <label>Seleccion su forma de pago</label>
                 <input type="checkbox" name="forma_pago" value="Efectivo"> Efectivo <br>
-                <input type="checkbox" name="forma_pago" value="Tarjeta"> Tarjeta de Credito <br>
+                <input type="checkbox" name="forma_pago" value="Tarjeta" onclick="tarjetear()"> Tarjeta de Credito <br>
                 <input type="submit" name="confirmar" value="Confirmar Compra" onclick="verificar()">
             </form>
 
@@ -49,7 +49,17 @@
         </section>
         <script>
             function verificar(){
+            }
+            function tarjetear(){
                 
+                form = document.getElementById("formulario_compra");
+                if(form.getElementsByName("numero_tarjeta") == null){
+                    numero_tarjeta = document.createElement("input");
+                    numero_tarjeta.type = "text";
+                    numero_tarjeta.name = "numero_tarjeta";
+                    form.appendChild(numero_tarjeta);
+                }
+            }
         </script>
     </body>
 </html>

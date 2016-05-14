@@ -21,7 +21,7 @@
     if(session.getAttribute("carrito")== null){
         ListaProductos carrito = new ListaProductos();
         session.setAttribute("carrito", carrito);
-    }    
+    }
 
 %>
 
@@ -47,9 +47,9 @@
                 <%
                 if("si".equals(request.getSession(true).getAttribute("admin")))
                 {%>
-                <li><a href="">ABM Clientes</a></li>
-                <li><a href="">ABM Productos</a></li>
-                <li><a href="">ABM Categorias</a></li>
+                <li><a href="ABMCliente.jsp">ABM Clientes</a></li>
+                <li><a href="ABMProducto.jsp">ABM Productos</a></li>
+                <li><a href="ABMCategoria.jsp">ABM Categorias</a></li>
                 <%}%>
             </ul>
         </section>

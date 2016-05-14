@@ -25,8 +25,12 @@
                     <td><input type="text" id="nombre" name="nombre" placeholder="Nombre"></td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="apellido" name="apellido" placeholder="apellido"></td>
+                    <td><input type="text" id="apellido" name="apellido" placeholder="Apellido"></td>
                 </tr>
+                <tr>
+                    <!--Agregamos aqui el campo nombre usuario, con el que el usuario podra ingresar a la cuenta ademas de correo electronico-->
+                    <td><input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre de Usuario"></td>
+                </tr>    
                 <tr>
                     <td><input type="text" id="direccion" name="direccion" placeholder="direccion"></td>
                 </tr>
