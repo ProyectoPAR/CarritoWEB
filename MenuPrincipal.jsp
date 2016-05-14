@@ -35,15 +35,26 @@
     <body>
         <div id="titulo">
             <h1>ParOnline</h1>
-            <p>Usted ha ingresado como:<a href="#"><%=session.getAttribute("user")%></a></p>
+            <p>Usted ha ingresado como: <%=session.getAttribute("user")%> </p>
         </div>
     
         <section id="menu">
             <ul>
                 <li><a href="Carrito.jsp">Carrito</a></li>
                 <li><a href="Producto">Productos</a></li>
+                
+                <%Usuario usuario = (Usuario)session.getAttribute("user");
+                if(usuario.getNombre() == null){%>
+                
                 <li><a href="Registro.jsp">Registrarse</a></li>
-                <li><a href="Login.jsp">Inicio sesion</a></li>                
+                <li><a href="Login.jsp">Inicio sesion</a></li>
+                
+                <%}else{%>
+                <li><a href="#">Mi perfil</a></li> <!--falta implementar, lo hare luego-->
+                <li><a href="#">Mis compras</a></li>
+                <li><a href="Login?accion=logout">Cerrar sesion</a></li>
+                
+                <%}%>
                 <%
                 if("si".equals(request.getSession(true).getAttribute("admin")))
                 {%>
