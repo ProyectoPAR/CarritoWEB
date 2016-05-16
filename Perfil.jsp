@@ -4,6 +4,11 @@
     Author     : root
 --%>
 
+<!--CAMBIOS REALIZADOS
+    
+    *EL BOTON DE ATRAS AHORA REDIRIGE AL MENU PRINCIPAL   
+    *CORREGIDOS ALGUNOS ERRORES MENORES EN LAS ETIQUETAS READONLY-->
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import= "com.par.paronline.modelo.Usuario" %>
 <%@include file = "MenuPrincipal.jsp"%>
@@ -30,7 +35,7 @@
                         
                         <td>
                             <input type="text" name="nombre"
-                                   value="<%=user.getNombre()%>" readonly="yes">
+                                   value="<%=user.getNombre()%>" readonly>
                         <td>
                     </tr>
                     
@@ -41,7 +46,7 @@
                         
                         <td>
                             <input type="text" name="apellido"
-                                   value="<%=user.getApellido()%>" readonly="yes">
+                                   value="<%=user.getApellido()%>" readonly>
                         </td>
                     </tr>
                     
@@ -52,7 +57,7 @@
                         
                         <td>
                             <input type="text" name="direccion"
-                                   value="<%=user.getDireccion()%>" readonly="yes">
+                                   value="<%=user.getDireccion()%>" readonly>
                         <td> 
                     </tr>
                     
@@ -63,7 +68,7 @@
                         
                         <td>
                             <input type="text" name="email"
-                                   value="<%=user.getEmail()%>" readonly="yes">
+                                   value="<%=user.getEmail()%>" readonly>
                         </td>
                     </tr>
                     
@@ -74,7 +79,7 @@
                         
                         <td>
                             <input type="password" name="contrasenha" placeholder="Contrasenha"
-                                   value="<%=user.getContrasenha()%>" readonly="yes">
+                                   value="<%=user.getContrasenha()%>" readonly>
                         </td> 
                     </tr>
                     
@@ -82,18 +87,15 @@
                         <td>
                             <input type="submit" name="modificar" value="Guardar Cambios">
                         </td> 
-                        <td>
-                           <button>
-                               <a href="ABMCliente.jsp" Style="text-decoration:none">
-                                   Volver atras
-                               </a>
-                           </button>
-                        </td>
-                    </tr>
-                    
+                    </tr>                    
                 </table>
                         
                 <input type="hidden" name="accion" value="grabarCambios">
+                </form>
+                        
+                <form action="MenuPrincipal.jsp">
+                  <input type="submit" value="Atras"/>  
+                </form>
                 </fieldset>
         </section>
     </body>
