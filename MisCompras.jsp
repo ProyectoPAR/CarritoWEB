@@ -30,11 +30,13 @@
                     <legend>Compra Nro <%=i + 1%></legend>
                     <table>
                         <tr>
+                            <th>Id Compra</th>
                             <th>Fecha</th>
                             <th>Monto total</th>
                             <th>Forma de Pago</th>
                         </tr>
                         <tr>
+                            <th><%=compras_user.get(i).getId_compra()%></th>
                             <th><%=compras_user.get(i).getFecha()%></th>
                             <th><%=compras_user.get(i).getMonto_total()%></th>
                             <th><%=compras_user.get(i).getForma_pago()%></th>
@@ -49,10 +51,10 @@
                             ListaProductos productos = compras_user.get(i).getProductos();
                             for(int j = 0 ; j < productos.size() ; j ++){%>
                             <tr>
-                                <th><%=productos.get(i).getDescripcion()%></th>
-                                <th><%=productos.get(i).getCategoria()%></th>
-                                <th><%=productos.get(i).getPrecio()%></th>
-                                <th><%=productos.get(i).getCantidad_compra()%></th>
+                                <th><%=productos.get(j).getDescripcion()%></th>
+                                <th><%=productos.get(j).getCategoria()%></th>
+                                <th><%=productos.get(j).getPrecio()%></th>
+                                <th><%=productos.get(j).getCantidad_compra()%></th>
                             </tr>
                             <%}
                         %>

@@ -41,8 +41,8 @@
             </form>
             <form action="ServletCompra" id="formulario_compra">
                 <label>Seleccion su forma de pago</label>
-                <input type="checkbox" name="forma_pago" value="Efectivo"> Efectivo <br>
-                <input type="checkbox" name="forma_pago" value="Tarjeta" onclick="tarjetear()"> Tarjeta de Credito <br>
+                <input type="checkbox" name="forma_pago" id="efectivo" value="Efectivo" onclick="efectivo()" > Efectivo <br>
+                <input type="checkbox" name="forma_pago" id="tarjeta" value="Tarjeta" onclick="tarjetear()"> Tarjeta de Credito <br>
                 <input type="submit" name="confirmar" value="Confirmar Compra" onclick="verificar()">
             </form>
 
@@ -54,11 +54,18 @@
             function tarjetear(){
                 
                 form = document.getElementById("formulario_compra");
-                if(form.getElementsByName("numero_tarjeta") == null){
-                    numero_tarjeta = document.createElement("input");
-                    numero_tarjeta.type = "text";
-                    numero_tarjeta.name = "numero_tarjeta";
-                    form.appendChild(numero_tarjeta);
+                numero_tarjeta = document.createElement("input");
+                numero_tarjeta.type = "text";
+                numero_tarjeta.id = "numero_tarjeta";
+                numero_tarjeta.name = "numero_tarjeta";
+                numero_tarjeta.placeholder = "Numero de Tarjeta"
+                form.appendChild(numero_tarjeta);
+                document.getElementById("tarjeta").onclick = "";
+                
+            }
+            function efectivo(){
+                if(document.getElementById("numero_tarjeta") !== none){
+                    document.removeChild(numero_tarjeta);
                 }
             }
         </script>
