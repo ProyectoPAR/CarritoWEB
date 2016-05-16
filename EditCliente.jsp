@@ -4,6 +4,9 @@
     Author     : User
 --%>
 
+<!---CAMBIOS HECHOS:
+    *EL BOTON DE ATRAS YA FUNCIONA--->
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page 
         import = "com.par.paronline.modelo.Usuario"
@@ -19,8 +22,7 @@
     <body>
         
         <section id="formulario">
-            <%Usuario u = ABMCliente.buscarUsuario(Integer.parseInt(request.getParameter("id_usuario")));//esta linea tira una excepcion
-            System.out.println(u.getId_usuario());%>
+            <%Usuario u = ABMCliente.buscarUsuario(Integer.parseInt(request.getParameter("id_usuario")));%>
             <form action="ServletABMCliente" method="post">
                 <fieldset>
                 <legend>Editar datos del cliente: </legend>
@@ -33,7 +35,7 @@
                         
                         <td>
                             <input type="text" name="id_usuario" placeholder="Id de usuario"
-                                   value="<%=u.getId_usuario()%>">
+                                   value="<%=u.getId_usuario()%>" required>
                         <td>
                     </tr>
                     
@@ -44,7 +46,7 @@
                         
                         <td>
                             <input type="text" name="nombre" placeholder="Nombre"
-                                   value="<%=u.getNombre()%>">
+                                   value="<%=u.getNombre()%>" required>
                         <td>
                     </tr>
                     
@@ -55,7 +57,7 @@
                         
                         <td>
                             <input type="text" name="apellido" placeholder="Apellido"
-                                   value="<%=u.getApellido()%>">
+                                   value="<%=u.getApellido()%>" required>
                         </td>
                     </tr>
                     
@@ -77,7 +79,7 @@
                         
                         <td>
                             <input type="text" name="email" placeholder="Email"
-                                   value="<%=u.getEmail()%>">
+                                   value="<%=u.getEmail()%>" required>
                         </td>
                     </tr>
                     
@@ -88,7 +90,7 @@
                         
                         <td>
                             <input type="password" name="contrasenha" placeholder="Contrasenha"
-                                   value="<%=u.getContrasenha()%>">
+                                   value="<%=u.getContrasenha()%>" required>
                         </td> 
                     </tr>
                     
@@ -96,32 +98,35 @@
                         <td>
                             Rol:
                         </td>
-                        
-                        <td>
-                            <input type="radio" name="rol" value="U">Usuario
-                            <input type="radio" name="rol" value="A">Administrador
-                        </td> 
-                    </tr>
-                    
                     <tr>
                         <td>
-                            <input type="submit" name="modificar" value="Guardar Cambios">
+                            <input type="radio" name="rol" value="U"
+                                   <%if("U".equals(u.getRol())){%>
+                                   checked
+                                   <%}%>
+                                   >
+                                Usuario
+                                   
+                            <input type="radio" name="rol" value="A"
+                                   <%if("A".equals(u.getRol())){%>
+                                   checked
+                                   <%}%>
+                                   >
+                                Administrador
                         </td> 
-                        <td>
-                           <button>
-                               <a href="ABMCliente.jsp" Style="text-decoration:none">
-                                   Volver atras
-                               </a>
-                           </button>
-                        </td>
                     </tr>
-                    
-                </table>
-                        
-                <input type="hidden" name="accion" value="grabarCambios">
-                </fieldset>
+                    </table>
+
+                    <input type="submit" name="modificar" value="Guardar Cambios">
+                    <input type="hidden" name="accion" value="grabarCambios">
+    
             </form>
-            
+
+            <form action="ABMCliente.jsp">
+                  <input type="submit" value="Atras"/>  
+            </form>
+                                   
+            </fieldset>
         </section>
     </body>
 </html>
