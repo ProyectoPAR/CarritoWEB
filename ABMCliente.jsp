@@ -4,6 +4,12 @@
     Author     : User
 --%>
 
+<!--
+    *AHORA SE MUESTRA EL NOMBRE DE USUARIO TAMBIEN
+    *ARREGLADO EL ERROR QUE MOSTRABA NULL EN EL NOMBRE DE USUARIO
+    *EL BOTON ELIMINAR YA FUNCIONA
+-->
+
 <%@page import= "com.par.paronline.modelo.ABMCliente"%>
 <%@page import= "com.par.paronline.modelo.Usuario"%>
 <%@page import= "java.util.ArrayList"%>
@@ -28,16 +34,18 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>E-mail</th>
+                        <th>Nombre de usuario</th>
                     </tr>
                 <%ArrayList<Usuario> us = ABMCliente.listar();
                 for(int i = 0 ; i < us.size() ; i++){
                     Usuario u = us.get(i);%>
                     
                     <tr>
-                            <td><%=u.getNombre_usuario()%></td>
+                            <td><%=u.getId_usuario()%></td> 
                             <td><%=u.getNombre()%></td>
                             <td><%=u.getApellido()%></td>
                             <td><%=u.getEmail()%></td>
+                            <td><%=u.getNombre_usuario()%></td>
                             <td>
                                 <form action=" /Carrito/ServletABMCliente">
                                     <input type="hidden" name="accion" value="editar">
