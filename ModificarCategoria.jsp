@@ -18,7 +18,7 @@
     <body>
         <section id="formulario">
             <%
-                String id_categoria = (String)request.getParameter("id_categoria");
+                Integer id_categoria = Integer.parseInt(request.getParameter("id_categoria"));
                 ListaCategorias categorias = new ListaCategorias();
                 categorias.getListaCategorias();
                 Categoria c = categorias.buscarId(id_categoria);

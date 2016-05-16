@@ -4,9 +4,9 @@
     Author     : root
 --%>
 
-<%@page import="com.par.paronline.modelo.ListaCategorias"%>
-<%@page import="com.par.paronline.modelo.Producto"%>
-<%@page import="com.par.paronline.modelo.ListaProductos"%>
+<%@page import= "com.par.paronline.modelo.ListaCategorias"%>
+<%@page import= "com.par.paronline.modelo.Producto"%>
+<%@page import= "com.par.paronline.modelo.ListaProductos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "MenuPrincipal.jsp"%>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
     <body>
         <section id="formulario">
             <%
-                String id_producto = request.getParameter("id_producto");
+                Integer id_producto = Integer.parseInt(request.getParameter("id_producto"));
                 ListaProductos productos = new ListaProductos();
                 productos.getListaProductos("all", "");
                 Producto p = productos.buscarId(id_producto);
@@ -31,7 +31,7 @@
                 <input type="hidden" name="accion" value="">
                 <input type="text" name="id_producto" value="<%=p.getId_producto()%>" readonly="yes">
                 <input type="text" name="descripcion" value="<%=p.getDescripcion()%>"  onfocus="habilitar()">
-                <input type="text" name="precio" value="<%=p.getPrecio()%>"  onfocus="habilitar()">
+                <input type="text" name="precio" value="<%=p.getPrecio()%>" onfocus="habilitar()">
                 <select name="categoria">
                     <option value="<%=p.getCategoria()%>"><%=p.getCategoria()%></option>
                     <%
