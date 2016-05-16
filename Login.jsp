@@ -3,7 +3,9 @@
     Created on : May 12, 2016, 2:53:51 PM
     Author     : User
 --%>
-
+<!--LISTA DE CAMBIOS
+    *SE ANHADIO METODO DE VALIDACION DE CAMPOS VACIOS NATIVO DE HTML5
+-->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file = "MenuPrincipal.jsp"%>
 <!DOCTYPE html>
@@ -22,11 +24,11 @@
                 <table>
                     <tr>
                         <!--para facilitar el login se ingresara solo con el nombre usuario-->
-                        <td><input type="text" name="nombre_usuario" placeholder="Nombre de Usuario"></td>
+                        <td><input type="text" name="nombre_usuario" placeholder="Nombre de Usuario" required></td>
                     </tr>    
 
                     <tr>
-                        <td><input type="password" name="pass" placeholder="Contrasenha"></td>
+                        <td><input type="password" name="pass" placeholder="Contrasenha" required></td>
                     </tr>    
 
                     <tr>
