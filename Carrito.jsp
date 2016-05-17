@@ -24,6 +24,7 @@
             <form action="ServletPop" method="get" name="producto">
                 <%
                     ListaProductos carrito = (ListaProductos)session.getAttribute("carrito");
+                    Usuario user = (Usuario) request.getSession(true).getAttribute("user");
                     if(carrito.size() > 0){
                         for(int i = 0 ; i < carrito.size() ; i ++){%>
                         <div name="producto">
@@ -41,8 +42,9 @@
             </form>
             <form action="ServletCompra" id="formulario_compra">
                 <label>Seleccion su forma de pago</label>
-                <input type="checkbox" name="forma_pago" id="efectivo" value="Efectivo" onclick="efectivo()" > Efectivo <br>
-                <input type="checkbox" name="forma_pago" id="tarjeta" value="Tarjeta" onclick="tarjetear()"> Tarjeta de Credito <br>
+                <input type="radio" name="forma_pago" id="efectivo" value="Efectivo" onclick="efectivo()" unchecked> Efectivo <br>
+                <input type="radio" name="forma_pago" id="tarjeta" value="Tarjeta" onclick="tarjetear()" unchecked> Tarjeta de Credito <br>
+                <label>Direccion de envio: </label> <input type="text" name="direccion_envio" value="<%=user.getDireccion()%>" > <br>
                 <input type="submit" name="confirmar" value="Confirmar Compra" onclick="verificar()">
             </form>
 
@@ -50,9 +52,10 @@
         </section>
         <script>
             function verificar(){
+                
             }
             function tarjetear(){
-                
+                alert("sfasds");
                 form = document.getElementById("formulario_compra");
                 numero_tarjeta = document.createElement("input");
                 numero_tarjeta.type = "text";
@@ -61,12 +64,9 @@
                 numero_tarjeta.placeholder = "Numero de Tarjeta"
                 form.appendChild(numero_tarjeta);
                 document.getElementById("tarjeta").onclick = "";
-                
             }
             function efectivo(){
-                if(document.getElementById("numero_tarjeta") !== none){
-                    document.removeChild(numero_tarjeta);
-                }
+                document.getElementById("formulario_compra").removeChild(numero_tarjeta);
             }
         </script>
     </body>

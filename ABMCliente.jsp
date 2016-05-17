@@ -23,9 +23,8 @@
         <title>ABM Cliente</title>
     </head>
     <body>
-        <h2>Gestion de clientes</h2>
-
             <div class="lista_usuarios" id="formulario">
+                <h2>Gestion de clientes</h2>
                 <fieldset>
                 <legend>Lista de usuarios</legend>
                 <table>

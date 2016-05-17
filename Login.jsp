@@ -16,8 +16,7 @@
         <title>Inicio de sesion</title>
     </head>
     <body>
-        
-        <section id="formulario">
+        <section id="formulario">            
             <fieldset>
                 <legend>Inicie sesion para continuar</legend>
             <form method="post" action="Login">

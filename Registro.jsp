@@ -22,21 +22,21 @@
             <legend>Datos de registro:</legend>    
             <table>    
                 <tr>
-                    <td><input type="text" id="nombre" name="nombre" placeholder="Nombre"></td>
+                    <td><input type="text" id="nombre" name="nombre" placeholder="Nombre" required></td>
                 </tr>
                 <tr>
-                    <td><input type="text" id="apellido" name="apellido" placeholder="Apellido"></td>
+                    <td><input type="text" id="apellido" name="apellido" placeholder="Apellido" required></td>
                 </tr>
                 <tr>
                     <!--Agregamos aqui el campo nombre usuario, con el que el usuario podra ingresar a la cuenta ademas de correo electronico-->
-                    <td><input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre de Usuario"></td>
+                    <td><input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre de Usuario" required> </td>
                 </tr>    
                 <tr>
-                    <td><input type="text" id="direccion" name="direccion" placeholder="direccion"></td>
+                    <td><input type="text" id="direccion" name="direccion" placeholder="direccion" required></td>
                 </tr>
                 <tr>
                     <td><input type="text" id="email" name="email" placeholder="E-mail"></td>
-                    <td><input type="password" id="contrasenha" name="contrasenha" placeholder="Contrasenha"></td>
+                    <td><input type="password" id="contrasenha" name="contrasenha" placeholder="Contrasenha" required></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value= "Registrarse ahora"></td>

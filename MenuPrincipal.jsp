@@ -13,6 +13,7 @@
 
 <%
     request.getSession(true);
+    //cuando entro por primera vez a la aplicacion web se cargan el usuario desconocido y el carrito vacio
     if(session.getAttribute("user") == null){
         Usuario user = new Usuario();
         session.setAttribute("user", user);

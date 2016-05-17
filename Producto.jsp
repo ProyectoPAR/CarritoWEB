@@ -51,16 +51,20 @@
                             <%
                             if(!carrito.existeProducto(productos.get(i))){%>    
                                 <form action="Carrito">
+                                    <input type="hidden" name="id_producto" value="<%=productos.get(i).getId_producto()%>" >
                                     <input type="text" name="descripcion" value="<%=productos.get(i).getDescripcion()%>" readonly="yes">
-                                    <input type="numeric" name="cantidad">
+                                    <input type="text" name="precio" value="<%=productos.get(i).getPrecio()%>" readonly>
+                                    <input type="numeric" name="cantidad" value="1">
                                     <input type="submit" name="agregar-sacar" value="Agregar">
                                     <input type="hidden" name="lastpage" value ="producto">
                                 </form>
                             <%}
-                            else{%>
+                            else{ Integer cantidad = carrito.buscarId(productos.get(i).getId_producto()).getCantidad_compra();%>
                                 <form action="Carrito">
+                                    <input type="hidden" name="id_producto" value="<%=productos.get(i).getId_producto()%>" >
                                     <input type="text" name="descripcion" value="<%=productos.get(i).getDescripcion()%>" readonly="yes">
-                                    <input type="numeric" name="cantidad" value="<%=productos.get(i).getCantidad_compra()%>"readonly="yes">
+                                    <input type="text" name="precio" value="<%=productos.get(i).getPrecio()%>" readonly>
+                                    <input type="numeric" name="cantidad" value="<%=cantidad%>"readonly="yes">
                                     <input type="submit" name="agregar-sacar" value="Sacar">
                                     <input type="hidden" name="lastpage" value ="producto">
                                 </form>

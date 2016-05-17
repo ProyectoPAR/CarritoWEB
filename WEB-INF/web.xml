@@ -32,6 +32,10 @@
         <servlet-name>ServletABMCategoria</servlet-name>
         <servlet-class>com.par.paronline.controlador.ServletABMCategoria</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletABMCliente</servlet-name>
+        <servlet-class>com.par.paronline.controlador.ServletABMCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletLogin</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>ServletABMCategoria</servlet-name>
         <url-pattern>/ServletABMCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletABMCliente</servlet-name>
+        <url-pattern>/ServletABMCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

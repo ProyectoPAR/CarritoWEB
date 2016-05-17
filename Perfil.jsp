@@ -24,7 +24,7 @@
             <%
                 Usuario user = (Usuario) session.getAttribute("user");
             %>
-            <form action="" method="post">
+            <form action="ServletABMCliente" method="post">
                 <fieldset>
                 <legend>Mi Perfil: </legend>
                 <table> 
@@ -35,7 +35,7 @@
                         
                         <td>
                             <input type="text" name="nombre"
-                                   value="<%=user.getNombre()%>" readonly>
+                                   value="<%=user.getNombre()%>">
                         <td>
                     </tr>
                     
@@ -46,7 +46,18 @@
                         
                         <td>
                             <input type="text" name="apellido"
-                                   value="<%=user.getApellido()%>" readonly>
+                                   value="<%=user.getApellido()%>">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            Nombre de Usuario:
+                        </td>
+                        
+                        <td>
+                            <input type="text" name="nombre_usuario"
+                                   value="<%=user.getNombre_usuario()%>">
                         </td>
                     </tr>
                     
@@ -57,7 +68,7 @@
                         
                         <td>
                             <input type="text" name="direccion"
-                                   value="<%=user.getDireccion()%>" readonly>
+                                   value="<%=user.getDireccion()%>">
                         <td> 
                     </tr>
                     
@@ -68,7 +79,7 @@
                         
                         <td>
                             <input type="text" name="email"
-                                   value="<%=user.getEmail()%>" readonly>
+                                   value="<%=user.getEmail()%>">
                         </td>
                     </tr>
                     
@@ -79,18 +90,19 @@
                         
                         <td>
                             <input type="password" name="contrasenha" placeholder="Contrasenha"
-                                   value="<%=user.getContrasenha()%>" readonly>
+                                   value="<%=user.getContrasenha()%>">
                         </td> 
                     </tr>
-                    
                     <tr>
                         <td>
-                            <input type="submit" name="modificar" value="Guardar Cambios">
-                        </td> 
-                    </tr>                    
+                            <input type="submit" name="grabar" value="Guardar Cambios">
+                        </td>
+                    </tr>
+                                        
                 </table>
-                        
+                <input type="hidden" name="id_usuario" value="<%=user.getId_usuario()%>" >
                 <input type="hidden" name="accion" value="grabarCambios">
+                <input type="hidden" name="lastpage" value="perfil">
                 </form>
                         
                 <form action="MenuPrincipal.jsp">

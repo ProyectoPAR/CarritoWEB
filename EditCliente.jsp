@@ -63,6 +63,17 @@
                     
                     <tr>
                         <td>
+                            Nombre de Usuario:
+                        </td>
+                        
+                        <td>
+                            <input type="text" name="nombre_usuario" placeholder="Nombre de Usuario"
+                                   value="<%=u.getNombre_usuario()%>" required>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
                             Direccion:
                         </td>
                         
@@ -119,6 +130,7 @@
 
                     <input type="submit" name="modificar" value="Guardar Cambios">
                     <input type="hidden" name="accion" value="grabarCambios">
+                    <input type="hidden" name="lastpage" value="perfil">
     
             </form>
 
