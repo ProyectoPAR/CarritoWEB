@@ -16,7 +16,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/registro.css">
+        <link rel="stylesheet" type="text/css" href="css/perfil.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -24,7 +24,7 @@
             <%
                 Usuario user = (Usuario) session.getAttribute("user");
             %>
-            <form action="ServletABMCliente" method="post">
+            <form action="" method="post">
                 <fieldset>
                 <legend>Mi Perfil: </legend>
                 <table> 
@@ -35,7 +35,7 @@
                         
                         <td>
                             <input type="text" name="nombre"
-                                   value="<%=user.getNombre()%>">
+                                   value="<%=user.getNombre()%>" readonly>
                         <td>
                     </tr>
                     
@@ -46,18 +46,7 @@
                         
                         <td>
                             <input type="text" name="apellido"
-                                   value="<%=user.getApellido()%>">
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            Nombre de Usuario:
-                        </td>
-                        
-                        <td>
-                            <input type="text" name="nombre_usuario"
-                                   value="<%=user.getNombre_usuario()%>">
+                                   value="<%=user.getApellido()%>" readonly>
                         </td>
                     </tr>
                     
@@ -68,7 +57,7 @@
                         
                         <td>
                             <input type="text" name="direccion"
-                                   value="<%=user.getDireccion()%>">
+                                   value="<%=user.getDireccion()%>" readonly>
                         <td> 
                     </tr>
                     
@@ -79,7 +68,7 @@
                         
                         <td>
                             <input type="text" name="email"
-                                   value="<%=user.getEmail()%>">
+                                   value="<%=user.getEmail()%>" readonly>
                         </td>
                     </tr>
                     
@@ -90,23 +79,22 @@
                         
                         <td>
                             <input type="password" name="contrasenha" placeholder="Contrasenha"
-                                   value="<%=user.getContrasenha()%>">
+                                   value="<%=user.getContrasenha()%>" readonly>
                         </td> 
                     </tr>
+                    
                     <tr>
                         <td>
-                            <input type="submit" name="grabar" value="Guardar Cambios">
-                        </td>
-                    </tr>
-                                        
+                            <input class = "boton" type="submit" name="modificar" value="Guardar Cambios">
+                        </td> 
+                    </tr>                    
                 </table>
-                <input type="hidden" name="id_usuario" value="<%=user.getId_usuario()%>" >
-                <input type="hidden" name="accion" value="grabarCambios">
-                <input type="hidden" name="lastpage" value="perfil">
+                        
+                <input  type="hidden" name="accion" value="grabarCambios">
                 </form>
                         
                 <form action="MenuPrincipal.jsp">
-                  <input type="submit" value="Atras"/>  
+                  <input class = "boton" type="submit" value="Atras"/>  
                 </form>
                 </fieldset>
         </section>

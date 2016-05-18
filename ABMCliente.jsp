@@ -19,21 +19,22 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/registro.css">
+        <link rel="stylesheet" type="text/css" href="css/ABMCliente.css">
         <title>ABM Cliente</title>
     </head>
     <body>
-            <div class="lista_usuarios" id="formulario">
-                <h2>Gestion de clientes</h2>
+        <h2>Gestion de clientes</h2>
+
+            <div class="lista_usuarios">
                 <fieldset>
                 <legend>Lista de usuarios</legend>
                 <table>
                     <tr>
-                        <th>ID de usuario</th><!--Debe ser el nombre de usuario, el id_usuario en todo caso pondriamos en un hidden para facilitar la busqueda-->
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>E-mail</th>
-                        <th>Nombre de usuario</th>
+                        <td>ID</td><!--Debe ser el nombre de usuario, el id_usuario en todo caso pondriamos en un hidden para facilitar la busqueda-->
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>E-mail</td>
+                        <td>Username</td>
                     </tr>
                 <%ArrayList<Usuario> us = ABMCliente.listar();
                 for(int i = 0 ; i < us.size() ; i++){
@@ -49,14 +50,14 @@
                                 <form action=" /Carrito/ServletABMCliente">
                                     <input type="hidden" name="accion" value="editar">
                                     <input type="hidden" name="id_usuario" value="<%=u.getId_usuario()%>">
-                                    <input type="submit" value="Editar">
+                                    <input class="boton" type="submit" value="Editar">
                                 </form>
                             </td>
                             <td>
                                 <form action="/Carrito/ServletABMCliente">
                                     <input type="hidden" name="id_usuario" value="<%=u.getId_usuario()%>">
                                     <input type="hidden" name="accion" value="eliminar">
-                                    <input type="submit" value="Eliminar">
+                                    <input class="boton" type="submit" value="Eliminar">
                                 </form>
                             </td>
                     </tr>
