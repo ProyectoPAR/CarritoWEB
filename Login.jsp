@@ -12,17 +12,17 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/registro.css">
+        <link rel="stylesheet" type="text/css" href= "css/log-in.css">
         <title>Inicio de sesion</title>
     </head>
     <body>
-        <section id="formulario">            
+        
+        <section id="login">
             <fieldset>
                 <legend>Inicie sesion para continuar</legend>
             <form method="post" action="Login">
-                <table>
+                <table id="campos">
                     <tr>
-                        <!--para facilitar el login se ingresara solo con el nombre usuario-->
                         <td><input type="text" name="nombre_usuario" placeholder="Nombre de Usuario" required></td>
                     </tr>    
 
@@ -31,7 +31,7 @@
                     </tr>    
 
                     <tr>
-                        <td><input type="submit" value="Enviar"></td>
+                        <td><input class = "boton" type="submit" value="Enviar"></td>
                     </tr>
                 </table>
                 <input type="hidden" name="accion" value="login">
