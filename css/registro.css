@@ -7,9 +7,34 @@ and open the template in the editor.
     Created on : May 11, 2016, 1:51:39 AM
     Author     : User
 */
+body{
+    background-color: #FAF8AA;
+}
 #formulario{
-    margin-left: 16%;
-    margin-right: 5%;
-    padding: 1%;
-    font-size: 30px;
+    margin-left: 40%;
+    margin-right: 50%;
+    padding: 10% auto;
+    font-size: 40px;
+}
+
+form{
+    margin-left: 20%;
+    
+}
+
+form input{
+    width: 280px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    text-align: left;
+    margin: 10px 30px;
+}
+#campos{
+    margin: 30px auto;
+}
+
+.boton{
+    margin-left: 12% ;
 }
