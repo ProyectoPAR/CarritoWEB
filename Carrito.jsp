@@ -41,11 +41,8 @@
                 <label>Total de la Compra: <input type="text" name="monto_total" value="<%=carrito.getMonto_total()%>"></label>
             </form>
             <form action="ServletCompra" id="formulario_compra">
-                <label>Seleccion su forma de pago</label>
-                <input type="radio" name="forma_pago" id="efectivo" value="Efectivo" onclick="efectivo()" unchecked> Efectivo <br>
-                <input type="radio" name="forma_pago" id="tarjeta" value="Tarjeta" onclick="tarjetear()" unchecked> Tarjeta de Credito <br>
-                <label>Direccion de envio: </label> <input type="text" name="direccion_envio" value="<%=user.getDireccion()%>" > <br>
                 <input type="submit" name="confirmar" value="Confirmar Compra" onclick="verificar()">
+                <input type="hidden" name="confirmar_compra" value="no">
             </form>
 
             <div><%= (String)request.getAttribute("javax.servlet.forward.request_uri")%></div>

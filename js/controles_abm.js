@@ -14,12 +14,15 @@ function agregar_producto (){
     descripcion.type = "text";
     descripcion.value = "";
     descripcion.name = "descripcion";
-    precio.type = "text";
+    descripcion.required = "yes";
+    precio.type = "number";
     precio.value = "";
     precio.name = "precio";
+    precio.required = "yes";
     categoria.type = "text";
     categoria.value = "";
     categoria.name = "categoria";
+    categoria.required = "yes";
     guardar.type = "submit";
     guardar.value = "Guardar";
     newform.appendChild(descripcion);
@@ -45,6 +48,7 @@ function agregar_categoria (){
     descripcion.type = "text";
     descripcion.value = "";
     descripcion.name = "descripcion";
+    descripcion.required = "yes";
     guardar = document.createElement("input");
     guardar.type = "submit";
     guardar.value = "Guardar";

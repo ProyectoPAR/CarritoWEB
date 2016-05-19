@@ -49,7 +49,7 @@
                         for(int i = 0 ; i < productos.size() ; i ++){%>
                             <div>
                             <%
-                            if(!carrito.existeProducto(productos.get(i))){%>    
+                            if(!carrito.existeProducto(productos.get(i))){//si no existe el producto en el carrito%>    
                                 <form action="Carrito">
                                     <input type="hidden" name="id_producto" value="<%=productos.get(i).getId_producto()%>" >
                                     <input type="text" name="descripcion" value="<%=productos.get(i).getDescripcion()%>" readonly="yes">

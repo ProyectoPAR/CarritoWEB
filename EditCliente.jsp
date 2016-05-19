@@ -35,7 +35,7 @@
                         
                         <td>
                             <input type="text" name="id_usuario" placeholder="Id de usuario"
-                                   value="<%=u.getId_usuario()%>" required>
+                                   value="<%=u.getId_usuario()%>" readonly>
                         <td>
                     </tr>
                     
@@ -79,7 +79,7 @@
                         
                         <td>
                             <input type="text" name="direccion" placeholder="Direccion"
-                                   value="<%=u.getDireccion()%>">
+                                   value="<%=u.getDireccion()%>" required>
                         <td> 
                     </tr>
                     
@@ -130,7 +130,7 @@
 
                     <input type="submit" name="modificar" value="Guardar Cambios">
                     <input type="hidden" name="accion" value="grabarCambios">
-                    <input type="hidden" name="lastpage" value="perfil">
+                    <input type="hidden" name="lastpage" value="editpage">
     
             </form>
 

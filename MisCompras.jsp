@@ -39,7 +39,7 @@
                         </tr>
                         <tr>
                             <th><%=compras_user.get(i).getId_compra()%></th>
-                            <th><%=compras_user.get(i).getFecha()%></th>
+                            <th><%=compras_user.get(i).getFechaString()%></th>
                             <th><%=compras_user.get(i).getMonto_total()%></th>
                             <th><%=compras_user.get(i).getForma_pago()%></th>
                             <%if(compras_user.get(i).getForma_pago().equals("Tarjeta"))%><th><%=compras_user.get(i).getNumero_tarjeta()%></th>
