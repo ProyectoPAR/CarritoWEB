@@ -16,11 +16,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/registro.css">
+        <link rel="stylesheet" type="text/css" href="css/misCompras.css">
         <title>JSP Page</title>
     </head>
     <body>
-        <section id="formulario">
+        <section id="reporte">
             <%if(compras_user.isEmpty()){%>
                 <div>Usted no tiene compras registradas</div>
             <%}
@@ -38,13 +38,14 @@
                             <th>Direccion de Envio</th>
                         </tr>
                         <tr>
-                            <th><%=compras_user.get(i).getId_compra()%></th>
-                            <th><%=compras_user.get(i).getFecha()%></th>
-                            <th><%=compras_user.get(i).getMonto_total()%></th>
-                            <th><%=compras_user.get(i).getForma_pago()%></th>
+                            <td><%=compras_user.get(i).getId_compra()%></td>
+                            <td><%=compras_user.get(i).getFecha()%></td>
+                            <td><%=compras_user.get(i).getMonto_total()%></td>
+                            <td><%=compras_user.get(i).getForma_pago()%></td>
                             <%if(compras_user.get(i).getForma_pago().equals("Tarjeta"))%><th><%=compras_user.get(i).getNumero_tarjeta()%></th>
-                            <th><%=compras_user.get(i).getDireccion_envio()%></th>
+                            <td><%=compras_user.get(i).getDireccion_envio()%></td>
                         </tr>
+                        
                         <tr>
                             <th>Productos</th>
                             <th>Categoria</th>
@@ -55,10 +56,10 @@
                             ListaProductos productos = compras_user.get(i).getProductos();
                             for(int j = 0 ; j < productos.size() ; j ++){%>
                             <tr>
-                                <th><%=productos.get(j).getDescripcion()%></th>
-                                <th><%=productos.get(j).getCategoria()%></th>
-                                <th><%=productos.get(j).getPrecio()%></th>
-                                <th><%=productos.get(j).getCantidad_compra()%></th>
+                                <td><%=productos.get(j).getDescripcion()%></td>
+                                <td><%=productos.get(j).getCategoria()%></td>
+                                <td><%=productos.get(j).getPrecio()%></td>
+                                <td><%=productos.get(j).getCantidad_compra()%></td>
                             </tr>
                             <%}
                         %>

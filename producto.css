@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 18, 2016, 3:02:33 PM
+    Author     : User
+*/
+
+body{
+    background-color:#FAF8AA; 
+}
+
+article{
+    margin-top: 0%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 5% auto;
+    font-size: 40px;
+}
+
+.buscador{
+    width: 800px;
+    height : 200px;
+    font-size: 30px;
+    padding: 10px;
+    display: inline;
+}
+
+#buscador select{
+    margin: 5px;
+    padding: 5px;
+    width: 35%;
+    font-size: 13px;
+}
+.campo_busqueda{
+    margin: 5px;
+    padding: 5.5px;
+    width: 45%;
+    font-size: 13px;
+}
+
+.boton_busqueda{
+    margin: 5px;
+    padding: 5px;
+    width: 15%;
+    font-size: 13px;
+    border-radius: 5px;
+    align-content: center;
+}
+
+#productos{
+    display: inline;
+}
+
+.grilla{
+   font-size: 20px;
+   display: inline-block;
+   width: 30%;
+   margin-right: 15px;
+   margin-left: 100px;
+   margin-bottom: 50px;
+   text-align: center;
+   padding: 10px;
+}
+
+.cantidad{
+    width: 30%;
+}
+
+.grilla p{
+    display: block;
+}
