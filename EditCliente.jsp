@@ -16,29 +16,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/registro.css">
+        <link rel="stylesheet" type="text/css" href="css/perfil_1.css">
         <title>JSP Page</title>
     </head>
     <body>
         
-        <section id="formulario">
+        <section id="editCliente">
             <%Usuario u = ABMCliente.buscarUsuario(Integer.parseInt(request.getParameter("id_usuario")));%>
             <form action="ServletABMCliente" method="post">
                 <fieldset>
                 <legend>Editar datos del cliente: </legend>
-                <table>
-                    
-                    <tr>
-                        <td>
-                            Id de usuario:
-                        </td>
-                        
-                        <td>
-                            <input type="text" name="id_usuario" placeholder="Id de usuario"
-                                   value="<%=u.getId_usuario()%>" readonly>
-                        <td>
-                    </tr>
-                    
+
+                <table class="edit">
                     <tr>
                         <td>
                             Nombre:
@@ -104,38 +93,17 @@
                                    value="<%=u.getContrasenha()%>" required>
                         </td> 
                     </tr>
-                    
-                    <tr>
-                        <td>
-                            Rol:
-                        </td>
-                    <tr>
-                        <td>
-                            <input type="radio" name="rol" value="U"
-                                   <%if("U".equals(u.getRol())){%>
-                                   checked
-                                   <%}%>
-                                   >
-                                Usuario
-                                   
-                            <input type="radio" name="rol" value="A"
-                                   <%if("A".equals(u.getRol())){%>
-                                   checked
-                                   <%}%>
-                                   >
-                                Administrador
-                        </td> 
-                    </tr>
+                 
                     </table>
 
-                    <input type="submit" name="modificar" value="Guardar Cambios">
+                    <input class="boton" type="submit" name="modificar" value="Guardar Cambios">
                     <input type="hidden" name="accion" value="grabarCambios">
                     <input type="hidden" name="lastpage" value="editpage">
     
             </form>
 
             <form action="ABMCliente.jsp">
-                  <input type="submit" value="Atras"/>  
+                  <input class="boton" type="submit" value="Atras"/>  
             </form>
                                    
             </fieldset>

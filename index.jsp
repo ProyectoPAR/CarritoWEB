@@ -14,7 +14,8 @@
         <title>Inicio de sesion</title>
     </head>
     <body>
-        
+        <%  Usuario user = (Usuario) request.getSession(true).getAttribute("user");
+            if(user.getNombre() == null){%>
         <section id="formulario">
             <fieldset>
                 <legend>Inicie sesion para continuar</legend>
@@ -37,6 +38,7 @@
             </form>
             </fieldset>
         </section>
+        <%}%>
         
     </body>
 </html>

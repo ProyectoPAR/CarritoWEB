@@ -1,0 +1,41 @@
+
+/*COMPARTIDO ENTRE EDITCLIENTE Y PERFIL*/
+
+body{
+    background-color: #FAF8AA;
+}
+legend{
+    font-size: 40px;
+}
+#formulario{
+    margin-left: 40%;
+    margin-right: 50%;
+    padding: 40% auto;
+    font-size: 35px;
+}
+
+form input{
+    width: 280px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    text-align: left;
+    margin: 10px 30px;
+}
+
+.boton{
+    width: 180px;
+    height: 30px;
+    text-align: center;
+    display: inline;
+}
+
+.edit{
+    font-size: 25px;
+}
+
+#editCliente{
+    width: 15%;
+    margin: 0% 15% 15% 25%;
+}

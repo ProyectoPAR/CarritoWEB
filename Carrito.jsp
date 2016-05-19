@@ -38,33 +38,18 @@
                         <h2>El carrito esta vacio</h2>
                   <%}
                 %>
-                <label>Total de la Compra: <input type="text" name="monto_total" value="<%=carrito.getMonto_total()%>"></label>
+                <label>Total de la Compra: <input type="text" name="monto_total" value="<%=carrito.getMonto_total()%>" readonly="yes"></label>
             </form>
             <form action="ServletCompra" id="formulario_compra">
                 <input type="submit" name="confirmar" value="Confirmar Compra" onclick="verificar()">
                 <input type="hidden" name="confirmar_compra" value="no">
             </form>
-
-            <div><%= (String)request.getAttribute("javax.servlet.forward.request_uri")%></div>
         </section>
         <script>
             function verificar(){
                 
             }
-            function tarjetear(){
-                alert("sfasds");
-                form = document.getElementById("formulario_compra");
-                numero_tarjeta = document.createElement("input");
-                numero_tarjeta.type = "text";
-                numero_tarjeta.id = "numero_tarjeta";
-                numero_tarjeta.name = "numero_tarjeta";
-                numero_tarjeta.placeholder = "Numero de Tarjeta"
-                form.appendChild(numero_tarjeta);
-                document.getElementById("tarjeta").onclick = "";
-            }
-            function efectivo(){
-                document.getElementById("formulario_compra").removeChild(numero_tarjeta);
-            }
+            
         </script>
     </body>
 </html>

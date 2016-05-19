@@ -18,7 +18,7 @@
             Usuario user = (Usuario) request.getSession(true).getAttribute("user");
         %>
         <section id="formulario">
-            <form action="ServletCompra" method="Post">
+            <form id="formulario_compra" action="ServletCompra" method="Post">
                 <label>Seleccion su forma de pago</label>
                 <input type="radio" name="forma_pago" id="efectivo" value="Efectivo" onclick="efectivo()" unchecked> Efectivo <br>
                 <input type="radio" name="forma_pago" id="tarjeta" value="Tarjeta" onclick="tarjetear()" unchecked> Tarjeta de Credito <br>
@@ -27,5 +27,20 @@
                 <input type="hidden" name="confirmar_compra" value="si">
             </form>
         </section>
+        <script>
+        function tarjetear(){
+                form = document.getElementById("formulario_compra");
+                numero_tarjeta = document.createElement("input");
+                numero_tarjeta.type = "number";
+                numero_tarjeta.id = "numero_tarjeta";
+                numero_tarjeta.name = "numero_tarjeta";
+                numero_tarjeta.placeholder = "Numero de Tarjeta"
+                form.appendChild(numero_tarjeta);
+                document.getElementById("tarjeta").onclick = "";
+            }
+            function efectivo(){
+                document.getElementById("formulario_compra").removeChild(numero_tarjeta);
+            }
+        </script>
     </body>
 </html>
